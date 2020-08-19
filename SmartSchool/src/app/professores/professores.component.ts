@@ -10,14 +10,14 @@ export class ProfessoresComponent implements OnInit {
   titulo = 'Professores';
 
   professores = [
-    { nome: 'Mario' },
-    { nome: 'Carlos' },
-    { nome: 'Maria' },
-    { nome: 'Amanda' },
-    { nome: 'Matheus' },
-    { nome: 'Efrain' },
-    { nome: 'Elen' },
-    { nome: 'Helena' },
+    { id: 1, nome: 'Mario', disciplina: 'Matemática' },
+    { id: 2, nome: 'Carlos', disciplina: 'Português' },
+    { id: 3, nome: 'Maria', disciplina: 'História' },
+    { id: 4, nome: 'Amanda', disciplina: 'Inglês' },
+    { id: 5, nome: 'Matheus', disciplina: 'Física' },
+    { id: 6, nome: 'Efrain', disciplina: 'Química' },
+    { id: 7, nome: 'Elen', disciplina: 'Robótica' },
+    { id: 8, nome: 'Helena', disciplina: 'Programação' },
   ];
 
   constructor() { }
