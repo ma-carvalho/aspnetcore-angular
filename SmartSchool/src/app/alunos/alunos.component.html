@@ -1,6 +1,11 @@
-<h1>{{titulo}}</h1>
+<div *ngIf="alunoSelecionado">
+  <h1>Aluno: {{alunoSelecionado}}</h1>
+  <button class="btn btn-default" (click)="voltar()">Voltar</button>
+</div>
 
-  <table class="table">
+<div *ngIf="!alunoSelecionado">
+  <h1>{{titulo}}</h1>
+  <table class="table table-hover">
     <thead class="thead-light">
       <tr>
         <th scope="col">ID</th>
@@ -10,7 +15,9 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let aluno of alunos">
+      <tr *ngFor="let aluno of alunos" 
+      style="cursor:pointer"
+      (click)="alunoSelect(aluno)">
         <th scope="row">{{aluno.id}}</th>
         <td>{{aluno.nome}}</td>
         <td>{{aluno.sobrenome}}</td>
@@ -18,3 +25,6 @@
       </tr>
     </tbody>
   </table>
+</div>
+
+  
