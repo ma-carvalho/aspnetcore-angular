@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { Aluno } from '../models/aluno';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-alunos',
@@ -13,6 +14,7 @@ export class AlunosComponent implements OnInit {
   public titulo = 'Alunos'; 
   public alunoSelecionado: Aluno; 
   public textoSimples: string;
+  public modalRef: BsModalRef;
 
   alunos = [
     { id: 1, nome: 'Maria', sobrenome: 'Carvalho', telefone:  54465656 }, 
@@ -33,7 +35,12 @@ export class AlunosComponent implements OnInit {
     this.alunoSelecionado = null;
   }
 
-  constructor(private fb: FormBuilder) 
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template);
+  }
+
+  constructor(private fb: FormBuilder,
+    private modalService: BsModalService) 
   {
     this.criarForm();
   }

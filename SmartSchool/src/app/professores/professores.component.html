@@ -34,18 +34,34 @@
         <th scope="col">ID</th>
         <th scope="col">Nome</th>
         <th scope="col">Disciplina</th>
+        <th scope="col">Opções</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let professor of professores"
-      (click)="professorSelect(professor)"
-        style="cursor: pointer">
+      <tr *ngFor="let professor of professores">
         <th scope="row">{{professor.id}}</th>
         <td>{{professor.nome}}</td>
         <td>{{professor.disciplina}}</td>
+        <td>
+          <div>
+            <button class="text-dark btn btn-sm btn-outline-warning mr-1" (click)="professorSelect(professor)">Detalhe</button>
+            <button class="btn btn-sm btn-outline-primary" (click)="openModal(template)">Alunos</button>
+          </div>
+        </td>
       </tr>
     </tbody>
   </table>
 </div>
+
+<ng-template #template>
+  <div class="modal-body">
+    
+  </div>
+  <div class="modal-footer">
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <h5>Fechar</h5>
+      </button>
+  </div>
+</ng-template>
 
 
