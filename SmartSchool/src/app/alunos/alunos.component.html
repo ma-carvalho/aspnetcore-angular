@@ -1,7 +1,7 @@
 <div *ngIf="alunoSelecionado">
   <div class="row">
     <div class="mr-auto">
-      <h1>Aluno: {{alunoSelecionado}}</h1>
+      <h1>Aluno: {{alunoSelecionado.id}}</h1>
     </div>
     <div class="mt-1">
       <button class="btn btn-warning" (click)="voltar()">Lista de Alunos</button>
@@ -11,15 +11,15 @@
   <form>
     <div class="form-group">
       <label for="formGroupExampleInput">Nome</label>
-      <input type="text" class="form-control" placeholder="Nome">
+      <input type="text" value="{{alunoSelecionado.nome}}" class="form-control" placeholder="Nome">
     </div>
     <div class="form-group">
       <label for="formGroupExampleInput2">Sobrenome</label>
-      <input type="text" class="form-control"  placeholder="Sobrenome">
+      <input type="text" value="{{alunoSelecionado.sobrenome}}" class="form-control"  placeholder="Sobrenome">
     </div>
     <div class="form-group">
       <label for="formGroupExampleInput2">Telefone</label>
-      <input type="text" class="form-control" placeholder="Telefone">
+      <input type="text" value="{{alunoSelecionado.telefone}}" class="form-control" placeholder="Telefone">
     </div>
   </form>
 
