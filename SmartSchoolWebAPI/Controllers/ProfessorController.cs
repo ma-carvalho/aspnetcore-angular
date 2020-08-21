@@ -65,20 +65,18 @@ namespace SmartSchoolWebAPI.Controllers
 
         [HttpPost]
         public async Task<IActionResult> Post(Professor model) {
-
-            try
-            {
+            
+            try{
                 _repository.Add(model);
 
                 if(await _repository.SaveChangesAsync()) {
                     return Ok(model);
                 }
-                
-            } catch(Exception ex) 
-            {
+            } catch(Exception ex){
                 return BadRequest($"Erro: {ex.Message}");
             }
-            return BadRequest();
+
+            return BadRequest("teste");
         }
 
         [HttpPut("{profesorId}")]

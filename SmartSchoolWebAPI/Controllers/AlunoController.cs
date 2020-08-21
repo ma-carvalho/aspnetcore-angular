@@ -110,7 +110,7 @@ namespace SmartSchoolWebAPI.Controllers
                 _repository.Delete(aluno);
 
                 if(await _repository.SaveChangesAsync()) {
-                    return Ok("Aluno excluído com sucesso!");
+                    return Ok(new { message = "Aluno deletado com sucesso!"});
                 }
             } catch(Exception ex){
                 return BadRequest($"Erro: {ex.Message}");

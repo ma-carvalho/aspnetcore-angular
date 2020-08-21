@@ -10,7 +10,6 @@ namespace SmartSchoolWebAPI.Models
         {
             this.Id = id;
             this.Nome = nome;
-
         }
         public int Id { get; set; }
         public string Nome { get; set; }
