@@ -14,10 +14,10 @@
       <label for="formGroupExampleInput">Nome</label>
       <input type="text" formControlName="nome" class="form-control" placeholder="Nome">
     </div>
-    <div class="form-group">
+    <!-- <div class="form-group">
       <label for="formGroupExampleInput2">Disciplina</label>
       <input type="text" formControlName="disciplina" class="form-control"  placeholder="Disciplina">
-    </div>
+    </div> -->
 
     <div class="form-group">
       <hr>
@@ -28,6 +28,9 @@
 
 <div *ngIf="!professorSelecionado">
   <h1>{{titulo}}</h1>
+  <div class="" style="float: right;">
+    <button class="btn btn-success" (click)="cadastrarProfessor()">Cadastrar Professor</button>
+  </div>
   <table class="table">
     <thead class="thead-light">
       <tr>
